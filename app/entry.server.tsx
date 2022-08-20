@@ -7,12 +7,12 @@ import { renderToPipeableStream } from 'react-dom/server'
 
 const ABORT_DELAY = 5000
 
-export default function handleRequest(
+const handleRequest = (
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
-) {
+) => {
   return new Promise((resolve, reject) => {
     let didError = false
 
@@ -47,3 +47,5 @@ export default function handleRequest(
     setTimeout(abort, ABORT_DELAY)
   })
 }
+
+export default handleRequest
