@@ -22,6 +22,9 @@ module.exports = {
         subtitle: '1.5rem',
         title: '3.5rem'    
       },
+      height: {
+        main: 'calc(100vh - 5rem)'
+      }
     },
     fontSize: {
       ...defaultTheme.fontSize,

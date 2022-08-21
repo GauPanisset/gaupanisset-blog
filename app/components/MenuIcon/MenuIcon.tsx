@@ -1,58 +1,55 @@
+import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
+
 type MenuIconProps = {
-  className: string
   isOpen: boolean
   onClick: () => void
+}
+
+type PathProps = {
+  d?: string
+  variants: Variants
+}
+
+const Path = (props: PathProps) => (
+  <motion.path
+    className="stroke-light"
+    fill="transparent"
+    strokeWidth="3"
+    strokeLinecap="round"
+    {...props}
+  />
+)
+
+const topLineVariants = {
+  closed: { d: 'M 2 2.5 L 20 2.5' },
+  open: { d: 'M 3 16.5 L 17 2.5' },
+}
+const middleLineVariants = {
+  closed: { opacity: 1, transition: { duration: 0.1 } },
+  open: { opacity: 0, transition: { duration: 0.1 } },
+}
+const bottomLineVariants = {
+  closed: { d: 'M 2 16.346 L 20 16.346' },
+  open: { d: 'M 3 2.5 L 17 16.346' },
 }
 
 /**
  * Display a clickable hamburger menu icon.
  * It render the right icon according to the `isOpen` props.
  */
-const MenuIcon = ({ className, isOpen, onClick }: MenuIconProps) => {
-  if (isOpen)
-    return (
-      <svg
-        className={className}
-        onClick={onClick}
-        width="28"
-        height="28"
-        viewBox="0 0 28 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          y="24.7487"
-          width="35"
-          height="4"
-          transform="rotate(-45 0 24.7487)"
-          fill="white"
-        />
-        <rect
-          x="2.82614"
-          y="-0.00231934"
-          width="35"
-          height="4"
-          transform="rotate(45 2.82614 -0.00231934)"
-          fill="white"
-        />
-      </svg>
-    )
-
-  return (
-    <svg
-      className={className}
-      onClick={onClick}
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect x="2" y="4" width="24" height="4" fill="white" />
-      <rect x="2" y="12" width="24" height="4" fill="white" />
-      <rect x="2" y="20" width="24" height="4" fill="white" />
+const MenuIcon = ({ isOpen, onClick }: MenuIconProps) => (
+  <motion.button
+    className="select-none"
+    onClick={onClick}
+    animate={isOpen ? 'open' : 'closed'}
+  >
+    <svg width="23" height="23" viewBox="0 0 23 23">
+      <Path variants={topLineVariants} />
+      <Path d="M 2 9.423 L 20 9.423" variants={middleLineVariants} />
+      <Path variants={bottomLineVariants} />
     </svg>
-  )
-}
+  </motion.button>
+)
 
 export default MenuIcon

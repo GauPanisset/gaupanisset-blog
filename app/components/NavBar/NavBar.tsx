@@ -1,7 +1,8 @@
-import { Link, useLocation } from '@remix-run/react'
-import React from 'react'
+import { Link } from '@remix-run/react'
+import { motion, useCycle } from 'framer-motion'
 
 import MenuIcon from '~/components/MenuIcon'
+import { useMediaQuery } from '~/hooks/useMediaQuery'
 
 import Tabs from './Tabs'
 
@@ -10,52 +11,76 @@ import Tabs from './Tabs'
  * The NavBar has two variant depending on screen size.
  */
 const NavBar = () => {
-  return (
-    <>
-      <DesktopNavBar className="hidden sm:flex" />
-      <MobileNavBar className="flex sm:hidden" />
-    </>
-  )
+  const matches = useMediaQuery('sm')
+  return matches ? <DesktopNavBar /> : <MobileNavBar />
 }
 
-type ClassNameProps = { className?: string }
+const wrapperVariants = {
+  hidden: {
+    y: '-100%',
+    transition: { delay: 0.1, duration: 0.8, ease: [0.17, 0.67, 0.27, 0.87] },
+  },
+  visible: {
+    y: 0,
+    transition: { delay: 0.4, duration: 0.8, ease: [0.17, 0.67, 0.27, 0.87] },
+  },
+}
+
+const menuVariants = {
+  open: {
+    clipPath: `inset(0% 0% 0% 0%)`,
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut',
+    },
+  },
+  closed: {
+    clipPath: 'inset(0% 0% 100% 0%)',
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut',
+    },
+  },
+}
 
 /**
  * Navigation bar display on desktop.
  */
-const DesktopNavBar = ({ className = '' }: ClassNameProps) => (
-  <nav
-    className={`w-full max-w-[1320px] items-center justify-between px-16 py-2 ${className}`}
-  >
-    <Link to="/">
-      <img
-        alt="GauPanisset logo"
-        className="h-16 w-16"
-        src="https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/gaupanisset-logo.svg"
-      />
-    </Link>
-    <Tabs className="flex gap-6" />
+const DesktopNavBar = () => (
+  <nav className="w-full bg-dark">
+    <motion.div
+      className="m-auto flex w-full max-w-[1320px] items-center justify-between px-16 py-2"
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={wrapperVariants}
+    >
+      <Link to="/">
+        <img
+          alt="GauPanisset logo"
+          className="h-16 w-16"
+          src="https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/gaupanisset-logo.svg"
+        />
+      </Link>
+      <Tabs className="flex gap-6" />
+    </motion.div>
   </nav>
 )
 
 /**
  * Navigation bar display on mobile.
  */
-const MobileNavBar = ({ className = '' }: ClassNameProps) => {
-  const [isOpen, setIsOpen] = React.useState(false)
-
-  const location = useLocation()
-
-  React.useEffect(() => {
-    setIsOpen(false)
-  }, [location])
-
-  const handleClick = () => setIsOpen((prevIsOpen) => !prevIsOpen)
+const MobileNavBar = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true)
 
   return (
-    <>
-      <nav
-        className={`w-full max-w-[1320px] items-center justify-between px-6 py-2 ${className}`}
+    <nav className="z-10 w-full bg-dark">
+      <motion.div
+        className="flex w-full max-w-[1320px] items-center justify-between px-6 py-2"
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={wrapperVariants}
       >
         <Link to="/">
           <img
@@ -64,18 +89,16 @@ const MobileNavBar = ({ className = '' }: ClassNameProps) => {
             src="https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/gaupanisset-logo.svg"
           />
         </Link>
-        <MenuIcon
-          className="block sm:hidden"
-          isOpen={isOpen}
-          onClick={handleClick}
-        />
-      </nav>
-      {isOpen && (
-        <div className="absolute top-0 mt-20 h-screen w-full bg-dark px-6 pt-16">
-          <Tabs className="flex flex-col gap-8" />
-        </div>
-      )}
-    </>
+        <MenuIcon isOpen={isOpen} onClick={() => toggleOpen()} />
+      </motion.div>
+      <motion.div
+        className="absolute top-20 z-0 h-main w-full bg-gradient-to-b from-dark via-transparent px-6 pt-16 backdrop-blur-xl"
+        animate={isOpen ? 'open' : 'closed'}
+        variants={menuVariants}
+      >
+        <Tabs className="flex flex-col gap-8" />
+      </motion.div>
+    </nav>
   )
 }
 

@@ -5,7 +5,7 @@ import ProjectCard from '~/components/ProjectCard'
  */
 const Projects = () => {
   return (
-    <main className="flex w-full max-w-[820px] flex-col gap-8 p-6 sm:gap-16 sm:p-16">
+    <div className="m-auto flex w-full max-w-[820px] flex-col gap-8 p-6 sm:gap-16 sm:p-16">
       <h1 className="text-title font-bold">{`Projects`}</h1>
       <div className="flex w-full flex-col gap-8">
         <ProjectCard
@@ -18,7 +18,7 @@ const Projects = () => {
           title="WeWork Team"
         />
       </div>
-    </main>
+    </div>
   )
 }
 

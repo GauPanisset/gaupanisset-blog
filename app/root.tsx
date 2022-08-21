@@ -3,10 +3,12 @@ import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
+  useOutlet,
 } from '@remix-run/react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import NavBar from '~/components/NavBar'
 
@@ -32,21 +34,69 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 })
 
+type DocumentProps = { children: React.ReactNode }
+
+type LayoutProps = { children: React.ReactNode }
+
 const App = () => {
+  const outlet = useOutlet()
+
+  return (
+    <Document>
+      <Layout>{outlet}</Layout>
+    </Document>
+  )
+}
+
+const variants = {
+  opening: {
+    clipPath: 'inset(100% 0% 0% 0%)',
+  },
+  closing: {
+    clipPath: 'inset(0% 0% 100% 0%)',
+    transition: { duration: 0.5, ease: [0.745, 0.35, 0.61, 0.925] },
+  },
+  visible: {
+    clipPath: 'inset(0% 0% 0% 0%)',
+    transition: { delay: 0.2, duration: 0.5, ease: [0.745, 0.35, 0.61, 0.925] },
+  },
+}
+
+const Document = ({ children }: DocumentProps) => {
+  const location = useLocation()
+
   return (
     <html lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="flex h-screen flex-col items-center bg-dark">
-        <NavBar />
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
-      </body>
+
+      <AnimatePresence mode="wait">
+        <motion.body
+          className="flex h-screen flex-col items-center"
+          key={location.pathname}
+          initial="opening"
+          animate="visible"
+          exit="closing"
+          variants={variants}
+        >
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
+        </motion.body>
+      </AnimatePresence>
     </html>
+  )
+}
+
+const Layout = ({ children }: LayoutProps) => {
+  return (
+    <>
+      <NavBar />
+      <motion.main className="h-full w-full bg-dark">{children}</motion.main>
+    </>
   )
 }
 
