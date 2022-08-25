@@ -13,17 +13,17 @@ module.exports = {
         light: '#FFFFFF',
       },
       fontFamily: {
-        inter: 'Inter, system-ui, sans-serif'
+        inter: 'Inter, system-ui, sans-serif',
       },
       fontSize: {
-        body: '16px',
-        'body-sm': '12px',
+        body: '18px',
+        'body-sm': '16px',
         caption: '0.75rem',
         subtitle: '1.5rem',
-        title: '3.5rem'    
+        title: '3.5rem',    
       },
       height: {
-        main: 'calc(100vh - 5rem)'
+        main: 'calc(100vh - 5rem)',
       }
     },
     fontSize: {
