@@ -1,4 +1,5 @@
 import ProjectCard from '~/components/ProjectCard'
+import RevealingText from '~/components/RevealingText'
 
 /**
  * Display the page showing all the projects.
@@ -6,11 +7,13 @@ import ProjectCard from '~/components/ProjectCard'
 const Projects = () => {
   return (
     <div className="m-auto flex w-full max-w-[820px] flex-col gap-8 p-6 sm:gap-16 sm:p-16">
-      <h1 className="text-title font-bold">{`Projects`}</h1>
+      <h1 className="text-title font-bold">
+        <RevealingText delay={1}>{`Projects`}</RevealingText>
+      </h1>
       <div className="flex w-full flex-col gap-8">
         <ProjectCard
           date="2022-08-20"
-          description="WeWork permet de réserver une salle ou un accès à un établissement. Cependant, il n’est pas possible de voir les réservations de ses collègues."
+          description="WeWork permet de réserver une salle ou un accès à un établissement. Cependant, il n'est pas possible de voir les réservations de ses collègues."
           icon="🏢"
           link="/project/wework-team"
           tags={['Chrome Extension', 'TypeScript']}

@@ -9,6 +9,7 @@ import {
   useOutlet,
 } from '@remix-run/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
 import NavBar from '~/components/NavBar'
 
@@ -48,7 +49,7 @@ const App = () => {
   )
 }
 
-const variants = {
+const variants: Variants = {
   opening: {
     clipPath: 'inset(100% 0% 0% 0%)',
   },
