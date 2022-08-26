@@ -12,8 +12,8 @@ import Tabs from './Tabs'
  * The NavBar has two variant depending on screen size.
  */
 const NavBar = () => {
-  const matches = useMediaQuery('sm')
-  return matches ? <DesktopNavBar /> : <MobileNavBar />
+  const isWiderThanSmScreen = useMediaQuery('sm')
+  return isWiderThanSmScreen ? <DesktopNavBar /> : <MobileNavBar />
 }
 
 const wrapperVariants: Variants = {

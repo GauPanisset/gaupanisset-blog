@@ -9,7 +9,7 @@ type ProjectCardProps = {
   date: string
   /**
    * Short description of the project.
-   * It should not exceed 170 characters and 3 lines.
+   * It should not exceed 210 characters for 3 lines (170 on mobile for 4 lines).
    */
   description: string
   /**
@@ -55,7 +55,9 @@ const ProjectCard = ({
         <span>{formatDate(date)}</span>{' '}
         <span>🕑 {computeReadingTime(text)} min read</span>
       </div>
-      <div className="text-base">{description}</div>
+      <div className="text-ellipsis text-base line-clamp-4 sm:line-clamp-3">
+        {description}
+      </div>
       <div className="flex gap-2 py-2">
         {tags.map((tag) => (
           <div
