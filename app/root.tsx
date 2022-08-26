@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 
 import NavBar from '~/components/NavBar'
+import { useInjectRealHeight } from '~/hooks/useInjectRealHeight'
 
 import styles from './tailwind.css'
 
@@ -41,6 +42,7 @@ type LayoutProps = { children: React.ReactNode }
 
 const App = () => {
   const outlet = useOutlet()
+  useInjectRealHeight()
 
   return (
     <Document>
@@ -75,7 +77,7 @@ const Document = ({ children }: DocumentProps) => {
 
       <AnimatePresence mode="wait">
         <motion.body
-          className="flex h-screen flex-col items-center"
+          className="flex min-h-[var(--window-height)] flex-col items-center"
           key={location.pathname}
           initial="opening"
           animate="visible"
@@ -96,7 +98,9 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <NavBar />
-      <motion.main className="h-full w-full bg-dark">{children}</motion.main>
+      <motion.main className="relative w-full flex-1 bg-dark">
+        {children}
+      </motion.main>
     </>
   )
 }

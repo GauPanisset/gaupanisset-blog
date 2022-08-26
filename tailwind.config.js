@@ -23,7 +23,7 @@ module.exports = {
         title: '3.5rem',    
       },
       height: {
-        main: 'calc(100vh - 5rem)',
+        main: 'calc(var(--window-height) - 5rem)',
       }
     },
     fontSize: {

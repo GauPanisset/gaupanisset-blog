@@ -1,5 +1,6 @@
 import { Link } from '@remix-run/react'
 import { motion, useCycle } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
 import MenuIcon from '~/components/MenuIcon'
 import { useMediaQuery } from '~/hooks/useMediaQuery'
@@ -15,7 +16,7 @@ const NavBar = () => {
   return matches ? <DesktopNavBar /> : <MobileNavBar />
 }
 
-const wrapperVariants = {
+const wrapperVariants: Variants = {
   hidden: {
     y: '-100%',
     transition: { delay: 0.1, duration: 0.8, ease: [0.17, 0.67, 0.27, 0.87] },
@@ -26,7 +27,7 @@ const wrapperVariants = {
   },
 }
 
-const menuVariants = {
+const menuVariants: Variants = {
   open: {
     clipPath: `inset(0% 0% 0% 0%)`,
     transition: {

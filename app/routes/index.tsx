@@ -22,8 +22,8 @@ const variants: Variants = {
  */
 const Index = () => {
   return (
-    <div className="m-auto flex h-full w-full max-w-[1320px] grow flex-col justify-center gap-8 px-6 text-base sm:px-16">
-      <div className="w-fit">
+    <div className="absolute m-auto flex h-full w-full max-w-[1320px] flex-col justify-center gap-8 px-6 text-base sm:px-16">
+      <div>
         <RevealingText>
           <motion.span
             className="mr-1 inline-block"
