@@ -4,7 +4,6 @@ import {
   LiveReload,
   Meta,
   Scripts,
-  ScrollRestoration,
   useLocation,
   useOutlet,
 } from '@remix-run/react'
@@ -85,7 +84,6 @@ const Document = ({ children }: DocumentProps) => {
           variants={variants}
         >
           {children}
-          <ScrollRestoration />
           <Scripts />
           {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
         </motion.body>

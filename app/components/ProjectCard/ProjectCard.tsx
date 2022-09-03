@@ -1,37 +1,15 @@
 import { Link } from '@remix-run/react'
 
-import { computeReadingTime, formatDate } from './helpers'
+import ProgressBar from '~/components/ProgressBar'
+import { computeReadingTime } from '~/helpers/computeReadingTime'
+import { formatDate } from '~/helpers/formatDate'
+import type { Project } from '~/types/project'
 
-type ProjectCardProps = {
-  /**
-   * Creation or last update date of the project.
-   */
-  date: string
-  /**
-   * Short description of the project.
-   * It should not exceed 210 characters for 3 lines (170 on mobile for 4 lines).
-   */
-  description: string
-  /**
-   * Icon or emoji displayed at the title left.
-   */
-  icon: string
-  /**
-   * Short link redirecting to the project page.
-   */
-  link: string
-  /**
-   * Tags attached to the project. They refer to linked subjects.
-   */
-  tags: string[]
+type ProjectCardProps = Project & {
   /**
    * Full project page text. It is required here to compute the read time.
    */
   text: string
-  /**
-   * Title of the project.
-   */
-  title: string
 }
 
 /**
@@ -42,18 +20,24 @@ const ProjectCard = ({
   description,
   icon,
   link,
+  progress,
   tags,
   text,
   title,
 }: ProjectCardProps) => {
   return (
     <Link to={link} className="flex flex-col gap-2">
-      <h2 className="text-subtitle font-bold text-primary">
+      <h2 className="text-subtitle-2 font-bold text-primary">
         {icon} {title}
       </h2>
-      <div className="flex gap-4 text-caption text-mid">
-        <span>{formatDate(date)}</span>{' '}
-        <span>🕑 {computeReadingTime(text)} min read</span>
+      <div className="flex items-center justify-between gap-4 text-caption text-mid">
+        <span>
+          <span>{formatDate(date.update || date.creation)}</span>{' '}
+          <span>🕑 {computeReadingTime(text)} min read</span>
+        </span>
+        <span className="h-fit max-w-[5rem] grow">
+          <ProgressBar value={progress} />
+        </span>
       </div>
       <div className="text-ellipsis text-base line-clamp-4 sm:line-clamp-3">
         {description}

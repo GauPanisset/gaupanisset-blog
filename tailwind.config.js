@@ -19,7 +19,8 @@ module.exports = {
         body: '18px',
         'body-sm': '16px',
         caption: '0.75rem',
-        subtitle: '1.5rem',
+        "subtitle-3": '1.25rem',
+        "subtitle-2": '1.5rem',
         title: '3.5rem',    
       },
       height: {

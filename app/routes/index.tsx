@@ -22,7 +22,7 @@ const variants: Variants = {
  */
 const Index = () => {
   return (
-    <div className="absolute m-auto flex h-full w-full max-w-[1320px] flex-col justify-center gap-8 px-6 text-base sm:px-16">
+    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center gap-8 px-6 text-base sm:px-16">
       <div>
         <RevealingText>
           <motion.span
@@ -35,7 +35,7 @@ const Index = () => {
           </motion.span>
           {`Hi! I'm`}
         </RevealingText>
-        <h1 className="overflow-hidden text-7xl font-black text-primary sm:text-8xl">
+        <h1 className="text-7xl font-black text-primary sm:text-8xl">
           {`Gauthier Panisset`}
         </h1>
       </div>
