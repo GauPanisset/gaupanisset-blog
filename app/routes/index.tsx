@@ -22,7 +22,7 @@ const variants: Variants = {
  */
 const Index = () => {
   return (
-    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center gap-8 px-6 text-base sm:px-16">
+    <div className="mx-auto flex max-w-[1320px] flex-col justify-center gap-8 self-stretch px-6 text-base sm:px-16">
       <div>
         <RevealingText>
           <motion.span

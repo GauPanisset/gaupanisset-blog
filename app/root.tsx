@@ -79,7 +79,6 @@ const Document = ({ children }: DocumentProps) => {
 
       <AnimatePresence mode="wait">
         <motion.body
-          className="flex min-h-[var(--window-height)] flex-col items-center"
           key={location.pathname}
           initial="opening"
           animate="visible"
@@ -97,12 +96,12 @@ const Document = ({ children }: DocumentProps) => {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="flex min-h-[var(--window-height)] flex-col items-center">
       <NavBar />
-      <motion.main className="relative w-full flex-1 bg-dark">
+      <motion.main className="flex w-full flex-1 bg-dark">
         {children}
       </motion.main>
-    </>
+    </div>
   )
 }
 

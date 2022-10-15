@@ -16,7 +16,7 @@ export const links: LinksFunction = () => {
  */
 const Project = () => {
   return (
-    <div className="m-auto w-full max-w-[1320px] p-6 sm:p-16">
+    <div className="mx-auto w-full max-w-[1320px] p-6 sm:p-16">
       <div className="prose prose-invert mx-auto max-w-[692px] lg:prose-xl">
         <Outlet />
         <ScrollRestoration />

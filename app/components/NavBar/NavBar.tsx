@@ -1,6 +1,7 @@
 import { Link } from '@remix-run/react'
 import { motion, useCycle } from 'framer-motion'
 import type { Variants } from 'framer-motion'
+import React from 'react'
 
 import MenuIcon from '~/components/MenuIcon'
 import { useMediaQuery } from '~/hooks/useMediaQuery'
@@ -73,6 +74,19 @@ const DesktopNavBar = () => (
  */
 const MobileNavBar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true)
+
+  /**
+   * Prevent the user to be able to scroll when the menu is open.
+   * On mobile, the `overflow` properties are ignored for <html> and <body>.
+   * Thus I have to add an additional <div> and set the `overflow` on it.
+   */
+  React.useEffect(() => {
+    const container = document.querySelector('body > div')
+    if (container) {
+      container.classList.toggle('overflow-y-hidden', isOpen)
+      container.classList.toggle('h-[var(--window-height)]', isOpen)
+    }
+  }, [isOpen])
 
   return (
     <nav className="z-10 w-full bg-dark">
