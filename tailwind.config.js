@@ -6,6 +6,9 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      /**
+       * TODO Remove those colors, since I use @tailwindcss/typography
+       */
       colors: {
         primary: '#F95738',
         dark: '#1E293B',
@@ -15,6 +18,9 @@ module.exports = {
       fontFamily: {
         inter: 'Inter, system-ui, sans-serif',
       },
+      /**
+       * TODO Remove this, since I use @tailwindcss/typography
+       */
       fontSize: {
         body: '18px',
         'body-sm': '16px',
@@ -23,16 +29,35 @@ module.exports = {
         "subtitle-2": '1.5rem',
         title: '3.5rem',    
       },
+      /**
+       * Full screen height minus the navbar height.
+       */
       height: {
         main: 'calc(var(--window-height) - 5rem)',
-      }
-    },
-    fontSize: {
-      ...defaultTheme.fontSize,
-      base: ['1rem', '2rem'],
+      },
+      /**
+       * Override @tailwindcss/typography
+       */
+      typography: {
+        DEFAULT: {
+          css: {
+            /**
+             * I don't know why but `prose` add the ` characters between code...
+             */
+            "code::before": { content: '' },
+            "code::after": { content: '' },
+            /**
+             * Use the background color of the a11y-dark theme.
+             */
+            "--tw-prose-pre-bg": '#2b2b2b',
+            "--tw-prose-invert-pre-bg": '#2b2b2b',
+          }
+        }
     }
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
   ],
 }

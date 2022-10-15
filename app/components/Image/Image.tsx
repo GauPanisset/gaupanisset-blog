@@ -20,15 +20,11 @@ type ImageProps = {
 /**
  * Display an image and optionally a caption to describe it.
  */
-const Image = ({ alt, caption, className, src }: ImageProps) => {
+const Image = ({ alt, caption, className = '', src }: ImageProps) => {
   return (
-    <figure className={`my-4 ${className}`}>
-      <img src={src} alt={alt} className="m-auto rounded shadow" />
-      {caption && (
-        <figcaption className="text-center text-caption text-mid">
-          {caption}
-        </figcaption>
-      )}
+    <figure className={`${className}`}>
+      <img src={src} alt={alt} className="m-auto" />
+      {caption && <figcaption className="text-center">{caption}</figcaption>}
     </figure>
   )
 }

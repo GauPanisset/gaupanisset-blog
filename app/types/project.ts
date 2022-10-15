@@ -18,14 +18,15 @@ export type Project = {
    */
   description: string
   /**
-   * Icon or emoji displayed at the title left.
+   * <head> meta tags
    */
-  icon: string
+  meta: {
+    title: string
+  }
   /**
    * Short link redirecting to the project page.
    */
-  link: string
-  progress: number
+  slug: string
   /**
    * Tags attached to the project. They refer to linked subjects.
    */

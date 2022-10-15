@@ -40,6 +40,9 @@ type DocumentProps = { children: React.ReactNode }
 type LayoutProps = { children: React.ReactNode }
 
 const App = () => {
+  /**
+   * The `useOutlet` is used to prevent glitch on transition with `framer-motion`.
+   */
   const outlet = useOutlet()
   useInjectRealHeight()
 
