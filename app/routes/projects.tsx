@@ -39,7 +39,7 @@ const Projects = () => {
   const projects = useLoaderData<LoaderData>()
 
   return (
-    <div className="m-auto flex w-full max-w-[820px] flex-col p-6 sm:p-16">
+    <div className="mx-auto flex w-full max-w-[820px] flex-col p-6 sm:p-16">
       <h1>
         <RevealingText delay={1}>{`Projects`}</RevealingText>
       </h1>
