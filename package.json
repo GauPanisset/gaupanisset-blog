@@ -13,10 +13,9 @@
     "@remix-run/react": "^1.6.8",
     "@remix-run/serve": "^1.6.8",
     "framer-motion": "^7.2.0",
+    "highlight.js": "^11.6.0",
     "react": "^18.2.0",
-    "react-code-blocks": "^0.0.9-0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.6.8",

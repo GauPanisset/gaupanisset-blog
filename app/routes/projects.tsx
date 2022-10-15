@@ -4,19 +4,32 @@ import ProjectCard from '~/components/ProjectCard'
 import RevealingText from '~/components/RevealingText'
 import { getProjectFromMdx } from '~/helpers/getProjectFromMdx'
 import { useLoaderData } from '~/hooks/useLoaderData'
+import type { Project } from '~/types/project'
 
 import * as gr20Reporting from './project/gr20-reporting.mdx'
 import * as personalBlog from './project/personal-blog.mdx'
 import * as weWorkTeam from './project/wework-team.mdx'
 
+const sortProjectsByDate = (projectA: Project, projectB: Project) => {
+  const dateA = new Date(projectA.date.update || projectA.date.creation)
+  const dateB = new Date(projectB.date.update || projectB.date.creation)
+  if (!dateA) return -1
+  if (!dateB) return 1
+
+  if (dateA <= dateB) return 1
+  return -1
+}
+
 type LoaderData = ReturnType<typeof getProjectFromMdx>[]
 
 export const loader = () => {
-  return json<LoaderData>([
-    getProjectFromMdx(gr20Reporting),
-    getProjectFromMdx(personalBlog),
-    getProjectFromMdx(weWorkTeam),
-  ])
+  return json<LoaderData>(
+    [
+      getProjectFromMdx(gr20Reporting),
+      getProjectFromMdx(personalBlog),
+      getProjectFromMdx(weWorkTeam),
+    ].sort(sortProjectsByDate)
+  )
 }
 
 /**
