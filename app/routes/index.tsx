@@ -14,7 +14,7 @@ const variants: Variants = {
       repeatType: 'mirror',
     },
   },
-  rotating: { rotate: 45 },
+  rotating: { rotate: 30 },
 }
 
 /**
@@ -26,7 +26,7 @@ const Index = () => {
       <div>
         <RevealingText>
           <motion.span
-            className="mr-1 inline-block"
+            className="mr-2 inline-block origin-[center_80%]"
             initial="rotating"
             animate="idle"
             variants={variants}
