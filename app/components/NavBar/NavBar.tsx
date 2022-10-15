@@ -107,7 +107,7 @@ const MobileNavBar = () => {
         <MenuIcon isOpen={isOpen} onClick={() => toggleOpen()} />
       </motion.div>
       <motion.div
-        className="absolute top-20 z-0 h-main w-full bg-gradient-to-b from-dark via-transparent px-6 pt-16 backdrop-blur-xl"
+        className="absolute top-20 z-0 h-[calc(var(--window-height)-5em)] w-full bg-gradient-to-b from-dark via-transparent px-6 pt-16 backdrop-blur-xl"
         animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
       >

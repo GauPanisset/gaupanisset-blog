@@ -12,7 +12,7 @@ type TabsProps = {
  */
 const Tabs = ({ className = '' }: TabsProps) => {
   return (
-    <ul className={`text-subtitle-2 font-bold ${className}`}>
+    <ul className={`text-2xl font-bold text-white ${className}`}>
       <Link to="/projects">{`Projects`}</Link>
       {/* <Link to="/about">{`About`}</Link>
       <Link to="/contact">{`Contact`}</Link> */}

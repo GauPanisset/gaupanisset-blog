@@ -22,7 +22,7 @@ const variants: Variants = {
  */
 const Index = () => {
   return (
-    <div className="mx-auto flex max-w-[1320px] flex-col justify-center gap-8 self-stretch px-6 text-base sm:px-16">
+    <div className="not-prose mx-auto flex w-full max-w-[1320px] flex-col justify-center gap-8 self-stretch px-6 text-white sm:px-16">
       <div>
         <RevealingText>
           <motion.span
@@ -42,10 +42,11 @@ const Index = () => {
       <div>
         <h2>
           <RevealingText>
-            {`I love creating `} <span>{`useful`}</span>
+            {`I love coding to create `}
+            <span>{`useful`}</span>
             {` or `}
             <span>{`funny`}</span>
-            {` things with code.`}
+            {` things.`}
           </RevealingText>
         </h2>
         <h2>

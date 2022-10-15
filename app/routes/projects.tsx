@@ -26,12 +26,12 @@ const Projects = () => {
   const projects = useLoaderData<LoaderData>()
 
   return (
-    <div className="m-auto flex w-full max-w-[820px] flex-col gap-8 p-6 sm:gap-16 sm:p-16">
-      <h1 className="text-title font-bold">
+    <div className="m-auto flex w-full max-w-[820px] flex-col p-6 sm:p-16">
+      <h1>
         <RevealingText delay={1}>{`Projects`}</RevealingText>
       </h1>
 
-      <div className="flex w-full flex-col gap-8">
+      <div className="flex w-full flex-col">
         {projects.map((project) => (
           <ProjectCard key={project.slug} {...project} />
         ))}

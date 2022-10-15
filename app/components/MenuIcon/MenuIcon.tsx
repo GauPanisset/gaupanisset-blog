@@ -13,7 +13,7 @@ type PathProps = {
 
 const Path = (props: PathProps) => (
   <motion.path
-    className="stroke-light"
+    className="stroke-white"
     fill="transparent"
     strokeWidth="3"
     strokeLinecap="round"

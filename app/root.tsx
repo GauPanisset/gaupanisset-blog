@@ -98,7 +98,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="flex min-h-[var(--window-height)] flex-col items-center">
       <NavBar />
-      <motion.main className="flex w-full flex-1 bg-dark">
+      <motion.main className="prose prose-invert flex w-full max-w-none flex-1 bg-dark lg:prose-xl">
         {children}
       </motion.main>
     </div>

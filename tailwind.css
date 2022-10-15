@@ -5,17 +5,11 @@
 @layer base {
   html {
     background-color: theme('colors.dark');
-    background-image: radial-gradient(theme('colors.mid')20 1px, transparent 1px);
+    background-image: radial-gradient(#ffffff20 1px, transparent 1px);
     background-size: calc(10 * 1px) calc(10 * 1px);
 
     -webkit-tap-highlight-color: transparent;
 
-    @apply font-inter text-body-sm text-light
-  }
-
-  @screen sm {
-    html {
-      @apply text-body
-    }
+    @apply font-inter
   }
 }
