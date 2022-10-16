@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         inter: 'Inter, system-ui, sans-serif',
       },
+      screens: {
+        xs: '375px',
+      },
       /**
        * Override @tailwindcss/typography
        */

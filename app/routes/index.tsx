@@ -35,7 +35,7 @@ const Index = () => {
           </motion.span>
           {`Hi! I'm`}
         </RevealingText>
-        <h1 className="text-7xl font-black text-primary sm:text-8xl">
+        <h1 className="text-5xl font-black text-primary sm:text-8xl xs:text-7xl">
           {`Gauthier Panisset`}
         </h1>
       </div>
