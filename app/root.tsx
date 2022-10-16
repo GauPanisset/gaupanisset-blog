@@ -4,6 +4,7 @@ import {
   LiveReload,
   Meta,
   Scripts,
+  useCatch,
   useLocation,
   useOutlet,
 } from '@remix-run/react'
@@ -15,7 +16,7 @@ import { useInjectRealHeight } from '~/hooks/useInjectRealHeight'
 
 import styles from './tailwind.css'
 
-export const links: LinksFunction = () => [
+const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
     rel: 'preconnect',
@@ -31,40 +32,27 @@ export const links: LinksFunction = () => [
 
 const description =
   "Gauthier's personal developer blog. Find his last projects and articles about tech and product subjects."
-const title = 'Gauthier Panisset'
+const defaultTitle = 'Gauthier Panisset'
 
-export const meta: MetaFunction = () => ({
+const meta: MetaFunction = () => ({
   charset: 'utf-8',
   description,
   'og:type': 'website',
   'og:url': 'https://gauthier.panisset.fr',
-  'og:title': title,
+  'og:title': defaultTitle,
   'og:description': description,
   'og:image':
     'https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/og-image.png',
   'og:image:height': '630',
   'og:image:width': '1200',
-  title,
   viewport: 'width=device-width,initial-scale=1',
 })
 
-type DocumentProps = { children: React.ReactNode }
+type DocumentProps = { children: React.ReactNode; title?: string }
+
+type ErrorBoundaryProps = { error: Error }
 
 type LayoutProps = { children: React.ReactNode }
-
-const App = () => {
-  /**
-   * The `useOutlet` is used to prevent glitch on transition with `framer-motion`.
-   */
-  const outlet = useOutlet()
-  useInjectRealHeight()
-
-  return (
-    <Document>
-      <Layout>{outlet}</Layout>
-    </Document>
-  )
-}
 
 const variants: Variants = {
   opening: {
@@ -80,13 +68,15 @@ const variants: Variants = {
   },
 }
 
-const Document = ({ children }: DocumentProps) => {
+const Document = ({ children, title = defaultTitle }: DocumentProps) => {
   const location = useLocation()
+  useInjectRealHeight()
 
   return (
     <html lang="en">
       <head>
         <Meta />
+        {title && <title>{title}</title>}
         <Links />
       </head>
 
@@ -117,5 +107,51 @@ const Layout = ({ children }: LayoutProps) => {
     </div>
   )
 }
+
+const App = () => {
+  /**
+   * The `useOutlet` is used to prevent glitch on transition with `framer-motion`.
+   */
+  const outlet = useOutlet()
+
+  return (
+    <Document>
+      <Layout>{outlet}</Layout>
+    </Document>
+  )
+}
+
+const CatchBoundary = () => {
+  const caught = useCatch()
+
+  return (
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <Layout>
+        <div className="mx-auto flex w-full max-w-[1320px] items-center self-stretch px-6 text-white sm:px-16">
+          <h1>
+            {caught.status} {caught.statusText}
+          </h1>
+        </div>
+      </Layout>
+    </Document>
+  )
+}
+
+const ErrorBoundary = ({ error }: ErrorBoundaryProps) => {
+  console.error(error)
+
+  return (
+    <Document title="Oops!">
+      <Layout>
+        <div className="mx-auto flex w-full max-w-[1320px] flex-col justify-center self-stretch px-6 text-white sm:px-16">
+          <h2>Error:</h2>
+          <pre>{error.message}</pre>
+        </div>
+      </Layout>
+    </Document>
+  )
+}
+
+export { CatchBoundary, ErrorBoundary, links, meta }
 
 export default App
