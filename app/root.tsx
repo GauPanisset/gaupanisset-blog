@@ -29,9 +29,22 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
 ]
 
+const description =
+  "Gauthier's personal developer blog. Find his last projects and articles about tech and product subjects."
+const title = 'Gauthier Panisset'
+
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'Gauthier Panisset',
+  description,
+  'og:type': 'website',
+  'og:url': 'https://gauthier.panisset.fr',
+  'og:title': title,
+  'og:description': description,
+  'og:image':
+    'https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/og-image.png',
+  'og:image:height': '630',
+  'og:image:width': '1200',
+  title,
   viewport: 'width=device-width,initial-scale=1',
 })
 
