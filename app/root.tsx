@@ -92,7 +92,13 @@ const Document = ({ children, title = defaultTitle }: DocumentProps) => {
         >
           {children}
           <Scripts />
-          {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
+          {process.env.NODE_ENV === 'development' && <LiveReload />}
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              src="https://statsy.observer/cl9lgmptj0009ld0bmgxz683f.js"
+              defer
+            />
+          )}
         </motion.body>
       </AnimatePresence>
     </html>
