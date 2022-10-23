@@ -108,6 +108,7 @@ const MobileNavBar = () => {
       </motion.div>
       <motion.div
         className="absolute top-20 z-0 h-[calc(var(--window-height)-5em)] w-full bg-gradient-to-b from-dark via-transparent px-6 pt-16 backdrop-blur-xl"
+        initial="closed"
         animate={isOpen ? 'open' : 'closed'}
         variants={menuVariants}
       >
