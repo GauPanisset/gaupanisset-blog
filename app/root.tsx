@@ -1,5 +1,6 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -10,6 +11,7 @@ import {
 } from '@remix-run/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
+import { HashLink } from 'react-router-hash-link'
 
 import NavBar from '~/components/NavBar'
 import { useInjectRealHeight } from '~/hooks/useInjectRealHeight'
@@ -122,15 +124,40 @@ const App = () => {
 }
 
 const CatchBoundary = () => {
-  const caught = useCatch()
+  const { status, statusText } = useCatch()
 
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
+    <Document title={`${status} ${statusText}`}>
       <Layout>
-        <div className="mx-auto flex w-full max-w-[1320px] items-center self-stretch px-6 text-white sm:px-16">
-          <h1>
-            {caught.status} {caught.statusText}
-          </h1>
+        <div className="mx-auto flex w-full max-w-[1320px] flex-col items-center justify-center gap-16 self-stretch px-6 sm:flex-row sm:px-16">
+          <div className="border-slate-300 text-center sm:border-r-[1px] sm:pr-16">
+            <h1 className="mb-0 text-7xl lg:mb-0 lg:text-8xl">{status}</h1>
+            <h2 className="my-4 text-3xl lg:my-4">{statusText}</h2>
+          </div>
+          {status === 404 && (
+            <div>
+              <p>{`I haven't created this page yet.`}</p>
+              <p>
+                {`Please click `}
+                <Link to="/" className="font-bold text-primary no-underline">
+                  here
+                </Link>
+                {` to be redirected to the landing page.`}
+              </p>
+              <p>
+                {`If you think this page
+                should exist, don't hesitate to `}
+                <HashLink
+                  smooth={true}
+                  to="/about#contact"
+                  className="font-bold text-primary no-underline"
+                >
+                  contact me
+                </HashLink>
+                .
+              </p>
+            </div>
+          )}
         </div>
       </Layout>
     </Document>

@@ -43,7 +43,7 @@ const About = () => {
         </p>
       </section>
       <section>
-        <h2>Bio</h2>
+        <h2 id="bio">Bio</h2>
         <table className="table-auto">
           <tbody>
             <tr>
@@ -84,7 +84,7 @@ const About = () => {
         </table>
       </section>
       <section>
-        <h2>Contact</h2>
+        <h2 id="contact">Contact</h2>
 
         <div className="flex gap-8">
           <a
