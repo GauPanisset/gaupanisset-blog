@@ -23,7 +23,7 @@ type ImageProps = {
 const Image = ({ alt, caption, className = '', src }: ImageProps) => {
   return (
     <figure className={`${className}`}>
-      <img src={src} alt={alt} className="m-auto" />
+      <img src={src} alt={alt} className="m-auto rounded-md shadow-lg" />
       {caption && <figcaption className="text-center">{caption}</figcaption>}
     </figure>
   )
