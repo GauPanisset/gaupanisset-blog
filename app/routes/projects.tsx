@@ -8,6 +8,7 @@ import type { Project } from '~/types/project'
 
 import * as gr20Reporting from './project/gr20-reporting.mdx'
 import * as personalBlog from './project/personal-blog.mdx'
+import * as slackWheel from './project/slack-wheel.mdx'
 import * as weWorkTeam from './project/wework-team.mdx'
 
 const sortProjectsByDate = (projectA: Project, projectB: Project) => {
@@ -27,6 +28,7 @@ export const loader = () => {
     [
       getProjectFromMdx(gr20Reporting),
       getProjectFromMdx(personalBlog),
+      getProjectFromMdx(slackWheel),
       getProjectFromMdx(weWorkTeam),
     ].sort(sortProjectsByDate)
   )
