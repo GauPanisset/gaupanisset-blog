@@ -6,6 +6,7 @@ import { getProjectFromMdx } from '~/helpers/getProjectFromMdx'
 import { useLoaderData } from '~/hooks/useLoaderData'
 import type { Project } from '~/types/project'
 
+import * as browserSupport from './project/browser-support.mdx'
 import * as gr20Reporting from './project/gr20-reporting.mdx'
 import * as personalBlog from './project/personal-blog.mdx'
 import * as slackWheel from './project/slack-wheel.mdx'
@@ -26,6 +27,7 @@ type LoaderData = ReturnType<typeof getProjectFromMdx>[]
 export const loader = () => {
   return json<LoaderData>(
     [
+      getProjectFromMdx(browserSupport),
       getProjectFromMdx(gr20Reporting),
       getProjectFromMdx(personalBlog),
       getProjectFromMdx(slackWheel),

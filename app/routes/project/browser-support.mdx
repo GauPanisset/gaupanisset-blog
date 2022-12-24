@@ -1,0 +1,44 @@
+---
+date:
+  creation: '2022-11-21'
+  update: '2022-12-24'
+description:
+  Browser support is often forgotten when a developper implements a design, even
+  if it is important for user experience. So, I tried to create a Chrome
+  Extension showing browser support of the running website.
+slug: browser-support
+tags: ['Chrome Extension', 'React', 'Tailwind']
+title: Browser Support
+
+meta:
+  title: Browser Support
+---
+
+import Image from '~/components/Image'
+
+# {attributes.title}
+
+## Why?
+
+Work in progress...
+
+## Screenshots
+
+<Image
+  alt="Browser support extension popup in an old macos UI style showing the first browsers (Chrome, Chrome Android, Edge) support minimal version and constraining property."
+  caption="Browser support extension popup showing the first browsers support minimal version and constraining property."
+  src="https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/browser-support/browser-support-popup.jpg"
+/>
+
+## Technical stack
+
+- [React](https://fr.reactjs.org/docs/getting-started.html) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework.
+- [Craco](https://github.com/dilanx/craco#documentation) to override the default
+  configuration of CRA.
+- [Tailwind](https://tailwindcss.com/docs) for styling.
+- [MDN](https://github.com/mdn/browser-compat-data) for the data.
+
+## Source code
+
+[https://github.com/GauPanisset/browser-support-extension](https://github.com/GauPanisset/browser-support-extension)
