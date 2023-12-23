@@ -1,0 +1,42 @@
+---
+title: Slack wheel
+description:
+  At the office when the time comes to go to lunch we always have the same
+  question "Where do we eat?". To make a choice I built a spinning wheel
+  displaying a random answer on Slack.
+date:
+  creation: '2022-11-05'
+  update: '2022-11-20'
+tags:
+  - 'Gif'
+  - 'Serverless'
+  - 'Slack'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+# {frontmatter.title}
+
+## Why?
+
+Work in progress...
+
+## Screenshots
+
+<MdxImage
+  alt=".gif showing a Slack channel in which I'm typing the Slack wheel command to create a random spinning wheel with food types as options. The 'french' food wins when the wheel stop spinning."
+  caption="Slack wheel in use on our Slack channel."
+  src="slack-wheel/slack-wheel.gif"
+/>
+
+## Technical stack
+
+- [Serverless](https://www.serverless.com/framework/docs/getting-started) with
+  [TypeScript](https://www.typescriptlang.org/docs/) to ease deployment.
+- [gif-encoder](https://www.npmjs.com/package/gif-encoder) and
+  [node-canvas](https://github.com/Automattic/node-canvas) to create `.gif`.
+- [Slack API](https://api.slack.com) to communicate with Slack.
+
+## Source
+
+[https://github.com/GauPanisset/slack-wheel](https://github.com/GauPanisset/slack-wheel)

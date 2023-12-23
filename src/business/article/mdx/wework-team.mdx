@@ -1,0 +1,75 @@
+---
+title: WeWork Team
+description:
+  WeWork offers a user to register a room or a desk in a coworking space.
+  However, it is not possible to see our colleagues' reservations. So I decided
+  to create a Chrome Extension to meet this need.
+date:
+  creation: '2022-03-19'
+  update: '2022-09-03'
+tags:
+  - 'Chrome Extension'
+  - 'React'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+# {frontmatter.title}
+
+## Why?
+
+Like a lot of tech companies, Goshaba became full-remote during the pandemic.
+But as soon as the world was allowed to go out, some of us wanted to be able to
+meet again in an office. That is why Goshaba chose the co-working solution named
+_WeWork_.
+
+_WeWork_ offers a dozen of offices in Paris (and even more all around the
+world). But you actually need to register a desk or a room in order to have
+access to the building. However, on _WeWork_ web platform the user can only
+manage his reservations and can't see those of his co-workers.
+
+**Problem:**\
+**How can we meet, if we don't know where and when the others took their reservations?**
+
+At first, we just tried to communicate with our messaging tools like Slack or
+Whatsapp, but it partially solved the problem. Either we forgot to share our
+reservations or we always shared them with the same co-workers.
+
+**Problem 2:**\
+**How can we automatically share our reservations with all co-workers?**
+
+That's why I thought a Chrome extension would be a great solution. In fact, it
+can enhance an already existing application. Therefore, we will not have to
+adopt a new process or a new behavior, or a new application. Instead, we will
+just keep using the same things but with the feature we needed.\
+And I confess, I was pretty excited about this solution because I had never built
+a Chrome extension before!
+
+## Screenshots
+
+<MdxImage
+  alt="Dark mode WeWork team calendar from 2022-05-12 to 2022-05-18 showing the reservations of 4 buildings in Paris. The mouse hovers one of them, which displays a tooltip with the full name of the user, the name of registered room and the reservation period."
+  caption="WeWork team calendar. On hover, a reservation displays more information."
+  src="wework-team/wework-calendar.png"
+/>
+
+<MdxImage
+  alt="Light mode WeWork team calendar from 2022-05-12 to 2022-05-18 showing the reservations of 4 buildings in Paris. The mouse hovers one of them, which displays a tooltip with the full name of the user, the name of registered room and the reservation period."
+  caption="WeWork team calendar on light mode."
+  src="wework-team/wework-calendar-light.png"
+/>
+
+## Technical stack
+
+- [React](https://fr.reactjs.org/docs/getting-started.html) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework.
+- [Craco](https://github.com/dilanx/craco#documentation) to override the default
+  configuration of CRA.
+- [Styled Components](https://styled-components.com/docs) with
+  [Material UI](https://mui.com/material-ui/getting-started/overview/) for
+  styling.
+- [Luxon](https://moment.github.io/luxon/#/) as date helper.
+
+## Source code
+
+[https://github.com/GauPanisset/wework-extension](https://github.com/GauPanisset/wework-extension)
