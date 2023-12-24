@@ -1,30 +1,36 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/technical/ui/button';
 
-import { ThemeModeSwitch } from '../theme/theme-mode-switch';
+import { DesktopNavigationBar } from './desktop-navigation-bar';
+import { MobileNavigationMenu } from './mobile-navigation-menu';
+import { useMediaQuery } from './use-media-query';
 
 const NavigationBar: React.FunctionComponent = () => {
+  const isWiderThanSmScreen = useMediaQuery('sm');
+
   return (
-    <nav className="not-prose sticky top-0 flex items-center justify-between bg-background">
-      <Link href="/">
-        <Image
-          alt="GauPanisset logo"
-          className="h-16 w-16"
-          src="https://gaupanisset-blog.s3.eu-west-3.amazonaws.com/gaupanisset-logo.svg"
-          width={64}
-          height={64}
-        />
-      </Link>
+    <nav className="not-prose sticky top-0 flex items-center justify-between bg-background px-6 sm:px-16">
+      <Button asChild className="h-fit w-fit rounded-full p-0" variant="ghost">
+        <Link href="/">
+          <Image
+            alt="GauPanisset logo"
+            className="h-16 w-16"
+            src="/assets/images/gaupanisset-logo.svg"
+            width={64}
+            height={64}
+          />
+        </Link>
+      </Button>
       <div className="flex items-center space-x-4">
-        <ThemeModeSwitch />
-        <Button asChild className="text-2xl font-bold" variant="ghost">
-          <Link href="/projects">Projects</Link>
-        </Button>
-        <Button asChild className="text-2xl font-bold" variant="ghost">
-          <Link href="/about">About</Link>
-        </Button>
+        {isWiderThanSmScreen ? (
+          <DesktopNavigationBar />
+        ) : (
+          <MobileNavigationMenu />
+        )}
       </div>
     </nav>
   );

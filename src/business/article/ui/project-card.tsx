@@ -14,7 +14,10 @@ const ProjectCard: React.FunctionComponent<Props> = ({
   title,
 }) => {
   return (
-    <Link href={`/projects/${slug}`} className="space-y-2 no-underline">
+    <Link
+      href={`/projects/${slug}`}
+      className="space-y-2 no-underline [&:first-of-type>h2]:mt-0"
+    >
       <h2 className="text-primary [&]:mb-2">{title}</h2>
       <div className="text-muted-foreground">
         <span>

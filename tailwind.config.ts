@@ -60,12 +60,12 @@ module.exports = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -75,10 +75,20 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            '--tw-prose-bullets': 'hsl(var(--border))',
             '--tw-prose-td-borders': 'hsl(var(--border))',
+            '--tw-prose-invert-bullets': 'hsl(var(--border))',
             '--tw-prose-invert-td-borders': 'hsl(var(--border))',
           },
         },
+      },
+      height: {
+        /**
+         * TODO This should be removed when upgrading tailwindcss.
+         * @see https://github.com/tailwindlabs/tailwindcss/discussions/8216
+         */
+        screen: ['100vh', '100dvh'],
+        'mobile-menu': ['calc(100vh - 4rem)', 'calc(100dvh - 4rem)'],
       },
     },
   },

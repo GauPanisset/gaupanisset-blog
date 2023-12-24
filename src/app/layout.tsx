@@ -33,13 +33,13 @@ const RootLayout: React.FunctionComponent<Props> = ({ children }) => {
       <body
         className={cn(
           inter.className,
-          'prose m-auto flex min-h-screen w-full max-w-7xl flex-col bg-background px-6 text-foreground dark:prose-invert lg:prose-xl sm:px-16'
+          'prose m-auto flex h-screen w-full max-w-7xl flex-col bg-background text-foreground dark:prose-invert lg:prose-xl'
         )}
       >
         <ThemeProvider>
           <NavigationBar />
 
-          <main className="flex min-h-0 flex-1 flex-col overflow-auto">
+          <main className="flex min-h-0 flex-1 flex-col overflow-auto px-6 sm:px-16">
             {children}
           </main>
         </ThemeProvider>
