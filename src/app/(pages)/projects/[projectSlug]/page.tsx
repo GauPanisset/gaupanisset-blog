@@ -10,10 +10,11 @@ type Props = {
 };
 
 const ProjectPage: React.FunctionComponent<Props> = async ({ params }) => {
-  const { source } = await getArticle(params.projectSlug);
+  const { source, metadata } = await getArticle(params.projectSlug);
 
   return (
     <article>
+      <h1>{metadata.title}</h1>
       <MDXRemote
         source={source}
         options={{

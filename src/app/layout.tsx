@@ -38,8 +38,7 @@ const RootLayout: React.FunctionComponent<Props> = ({ children }) => {
       >
         <ThemeProvider>
           <NavigationBar />
-
-          <main className="flex min-h-0 flex-1 flex-col overflow-auto px-6 sm:px-16">
+          <main className="flex min-h-0 flex-1 flex-col overflow-auto">
             {children}
           </main>
         </ThemeProvider>

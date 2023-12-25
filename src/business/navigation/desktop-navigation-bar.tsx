@@ -7,7 +7,7 @@ import { Button } from '@/technical/ui/button';
 
 const DesktopNavigationBar: React.FunctionComponent = () => {
   return (
-    <>
+    <div className="flex items-center space-x-4">
       <ThemeModeSwitch />
       <Button asChild className="text-2xl font-bold" variant="ghost">
         <Link href="/projects">Projects</Link>
@@ -15,7 +15,7 @@ const DesktopNavigationBar: React.FunctionComponent = () => {
       <Button asChild className="text-2xl font-bold" variant="ghost">
         <Link href="/about">About</Link>
       </Button>
-    </>
+    </div>
   );
 };
 

@@ -18,7 +18,9 @@ const ProjectCard: React.FunctionComponent<Props> = ({
       href={`/projects/${slug}`}
       className="space-y-2 no-underline [&:first-of-type>h2]:mt-0"
     >
-      <h2 className="text-primary [&]:mb-2">{title}</h2>
+      <h2 id={`project-card-${slug}`} className="text-primary [&]:mb-2">
+        {title}
+      </h2>
       <div className="text-muted-foreground">
         <span>
           {new Date(date.update).toLocaleDateString('en-US', {

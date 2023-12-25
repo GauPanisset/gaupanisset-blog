@@ -6,7 +6,7 @@ const ProjectsPage = async () => {
   const projectArticles = await getArticles();
 
   return (
-    <>
+    <div className="relative">
       <h1>Projects</h1>
       <div className="flex w-full flex-col">
         {sortArticleByDate(projectArticles).map((projectArticle) => (
@@ -17,7 +17,7 @@ const ProjectsPage = async () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

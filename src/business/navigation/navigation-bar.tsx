@@ -25,13 +25,11 @@ const NavigationBar: React.FunctionComponent = () => {
           />
         </Link>
       </Button>
-      <div className="flex items-center space-x-4">
-        {isWiderThanSmScreen ? (
-          <DesktopNavigationBar />
-        ) : (
-          <MobileNavigationMenu />
-        )}
-      </div>
+      {isWiderThanSmScreen ? (
+        <DesktopNavigationBar />
+      ) : (
+        <MobileNavigationMenu />
+      )}
     </nav>
   );
 };

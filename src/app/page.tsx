@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const HomePage = () => {
   return (
-    <div className="flex flex-1 flex-col justify-center space-y-8">
+    <div className="flex flex-1 flex-col justify-center space-y-8 px-6 sm:px-16">
       <p className="[&]:m-0">👋 Hi! I&apos;m</p>
       <h1 className="text-5xl font-black text-primary xs:text-7xl sm:text-8xl">
         Gauthier Panisset

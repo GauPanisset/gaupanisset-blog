@@ -67,10 +67,32 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'article-in': {
+          from: {
+            color: 'hsl(var(--primary))',
+            'background-color': 'transparent',
+          },
+          to: {
+            color: 'hsl(var(--foreground))',
+            'background-color': 'hsl(var(--background))',
+          },
+        },
+        'article-title-in': {
+          from: {
+            transform: 'translateY(var(--title-start-y)) scale(0.66666)',
+          },
+          to: {
+            transform: 'translateY(0px) scale(1)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'article-in':
+          'article-in 0.75s cubic-bezier(0.75, 0, 0.5, 0.99) forwards',
+        'article-title-in':
+          'article-title-in 0.75s cubic-bezier(0.75, 0, 0.5, 0.99) forwards',
       },
       typography: {
         DEFAULT: {
@@ -88,7 +110,7 @@ module.exports = {
          * @see https://github.com/tailwindlabs/tailwindcss/discussions/8216
          */
         screen: ['100vh', '100dvh'],
-        'mobile-menu': ['calc(100vh - 4rem)', 'calc(100dvh - 4rem)'],
+        main: ['calc(100vh - 4rem)', 'calc(100dvh - 4rem)'],
       },
     },
   },
