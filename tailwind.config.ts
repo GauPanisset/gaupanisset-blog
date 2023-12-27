@@ -1,3 +1,5 @@
+const svgToDataUri = require('mini-svg-data-uri');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
@@ -111,6 +113,14 @@ module.exports = {
          */
         screen: ['100vh', '100dvh'],
         main: ['calc(100vh - 4rem)', 'calc(100dvh - 4rem)'],
+      },
+      backgroundImage: {
+        'dot-pattern': `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(0,17%,8%,0.2)"><path d="M0 .5H31.5V32"/></svg>`
+        )}")`,
+        'dot-pattern-dark': `url("${svgToDataUri(
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(33,52%,91%,0.2)"><path d="M0 .5H31.5V32"/></svg>`
+        )}")`,
       },
     },
   },

@@ -16,7 +16,7 @@ const ProjectPage: React.FunctionComponent<Props> = async ({ params }) => {
       <ProjectTitle projectSlug={params.projectSlug}>
         {metadata.title}
       </ProjectTitle>
-      <div className="transition-none delay-700 duration-500 animate-in fade-in-0 slide-in-from-bottom-16 fill-mode-backwards">
+      <div className="transition-none delay-700 duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards">
         <MDXRemote
           source={source}
           options={{

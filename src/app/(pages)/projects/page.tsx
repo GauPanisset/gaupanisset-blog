@@ -9,9 +9,10 @@ const ProjectsPage = async () => {
     <div className="relative">
       <h1>Projects</h1>
       <div className="flex w-full flex-col">
-        {sortArticleByDate(projectArticles).map((projectArticle) => (
+        {sortArticleByDate(projectArticles).map((projectArticle, index) => (
           <ProjectCard
             key={projectArticle.slug}
+            index={index}
             slug={projectArticle.slug}
             {...projectArticle.metadata}
           />

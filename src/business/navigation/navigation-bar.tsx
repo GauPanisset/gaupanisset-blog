@@ -13,7 +13,7 @@ const NavigationBar: React.FunctionComponent = () => {
   const isWiderThanSmScreen = useMediaQuery('sm');
 
   return (
-    <nav className="not-prose sticky top-0 flex items-center justify-between bg-background px-6 sm:px-16">
+    <nav className="not-prose sticky top-0 z-10 box-border flex h-16 items-center justify-between border-b border-border/40 bg-background px-6 sm:px-16">
       <Button asChild className="h-fit w-fit rounded-full p-0" variant="ghost">
         <Link href="/">
           <Image

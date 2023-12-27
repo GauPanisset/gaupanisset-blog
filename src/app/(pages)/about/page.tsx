@@ -6,7 +6,10 @@ const AboutPage = () => {
   return (
     <>
       <h1>About</h1>
-      <section>
+      <section
+        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        style={{ animationDelay: '300ms' }}
+      >
         <p>
           I&apos;m Gauthier Panisset a software engineer based in Paris and
           currently working for{` `}
@@ -38,7 +41,10 @@ const AboutPage = () => {
           time working on side projects.
         </p>
       </section>
-      <section>
+      <section
+        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        style={{ animationDelay: '400ms' }}
+      >
         <h2 id="bio">Bio</h2>
         <table className="table-auto">
           <tbody>
@@ -79,7 +85,10 @@ const AboutPage = () => {
           </tbody>
         </table>
       </section>
-      <section>
+      <section
+        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        style={{ animationDelay: '500ms' }}
+      >
         <h2 id="contact">Contact</h2>
 
         <div className="flex gap-8">

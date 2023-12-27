@@ -15,13 +15,15 @@ const ProjectPage: React.FunctionComponent<Props> = async ({ params }) => {
   return (
     <article>
       <h1>{metadata.title}</h1>
-      <MDXRemote
-        source={source}
-        options={{
-          parseFrontmatter: true,
-        }}
-        components={{ MdxImage }}
-      />
+      <div className="delay-300 duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards">
+        <MDXRemote
+          source={source}
+          options={{
+            parseFrontmatter: true,
+          }}
+          components={{ MdxImage }}
+        />
+      </div>
     </article>
   );
 };
