@@ -31,7 +31,7 @@ const ProjectTitle: React.FunctionComponent<Props> = ({
 
   return (
     <h1
-      className="origin-top-left animate-article-title-in text-inherit"
+      className="origin-top-left text-inherit motion-safe:animate-article-title-in"
       style={{ '--title-start-y': `${elementY}px` } as React.CSSProperties}
     >
       {children}

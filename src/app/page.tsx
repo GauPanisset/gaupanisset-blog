@@ -11,7 +11,7 @@ const HomePage = () => {
         <h1 className="text-5xl font-black text-primary duration-500 animate-in fade-in fill-mode-backwards xs:text-7xl sm:text-8xl">
           Gauthier Panisset
         </h1>
-        <p className="transition-none delay-300 duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards">
+        <p className="transition-none delay-300 duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16">
           I love coding to create useful or funny things.
           <br />
           Currently Software Engineer at{' '}
@@ -25,7 +25,7 @@ const HomePage = () => {
           </a>{' '}
           building an assessment tool with cognitive science and video game.
         </p>
-        <p className="my-8 transition-none delay-500 duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards sm:my-16">
+        <p className="my-8 transition-none delay-500 duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16 sm:my-16">
           Welcome to my website, have a look at my{' '}
           <Link className="font-bold text-primary" href="/projects">
             projects

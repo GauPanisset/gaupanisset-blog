@@ -17,7 +17,7 @@ const ProjectCard: React.FunctionComponent<Props> = ({
   return (
     <Link
       href={`/projects/${slug}`}
-      className="space-y-2 no-underline duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards [&:first-of-type>h2]:mt-0"
+      className="space-y-2 no-underline duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16 [&:first-of-type>h2]:mt-0"
       style={{ animationDelay: `${100 * index}ms` }}
     >
       <h2 id={`project-card-${slug}`} className="text-primary [&]:mb-2">

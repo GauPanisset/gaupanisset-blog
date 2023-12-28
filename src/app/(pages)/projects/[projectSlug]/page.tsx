@@ -15,7 +15,7 @@ const ProjectPage: React.FunctionComponent<Props> = async ({ params }) => {
   return (
     <article>
       <h1>{metadata.title}</h1>
-      <div className="delay-300 duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards">
+      <div className="delay-300 duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16">
         <MDXRemote
           source={source}
           options={{

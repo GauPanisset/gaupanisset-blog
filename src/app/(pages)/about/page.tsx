@@ -7,7 +7,7 @@ const AboutPage = () => {
     <>
       <h1>About</h1>
       <section
-        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        className="duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16"
         style={{ animationDelay: '300ms' }}
       >
         <p>
@@ -42,7 +42,7 @@ const AboutPage = () => {
         </p>
       </section>
       <section
-        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        className="duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16"
         style={{ animationDelay: '400ms' }}
       >
         <h2 id="bio">Bio</h2>
@@ -86,7 +86,7 @@ const AboutPage = () => {
         </table>
       </section>
       <section
-        className="duration-500 animate-in fade-in slide-in-from-bottom-16 fill-mode-backwards"
+        className="duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16"
         style={{ animationDelay: '500ms' }}
       >
         <h2 id="contact">Contact</h2>
