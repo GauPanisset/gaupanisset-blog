@@ -1,4 +1,4 @@
-import fs from 'fs';
+import { promises as fs } from 'fs';
 import { redirect } from 'next/navigation';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
@@ -8,7 +8,7 @@ import { Article, metadataSchema } from '../types';
 
 const serializeMdxFile = async (fileName: string): Promise<Article> => {
   try {
-    const fileSource = fs.readFileSync(
+    const fileSource = await fs.readFile(
       path.join(mdxDirectory, fileName),
       'utf-8'
     );

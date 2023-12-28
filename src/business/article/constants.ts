@@ -1,3 +1,3 @@
-const mdxDirectory = 'src/business/article/mdx';
+const mdxDirectory = `${process.cwd()}/src/business/article/mdx`;
 
 export { mdxDirectory };
