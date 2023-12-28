@@ -17,8 +17,12 @@ const ProjectCard: React.FunctionComponent<Props> = ({
   return (
     <Link
       href={`/projects/${slug}`}
-      className="space-y-2 no-underline duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16 [&:first-of-type>h2]:mt-0"
-      style={{ animationDelay: `${100 * index}ms` }}
+      className="space-y-2 rounded-md px-4 py-2 no-underline animate-in fade-in fill-mode-backwards hover:bg-accent hover:text-accent-foreground motion-safe:slide-in-from-bottom-16 [&>h2]:mt-0"
+      style={{
+        animationDelay: `${100 * index}ms`,
+        animationDuration: '500ms',
+        transitionDuration: '250ms',
+      }}
     >
       <h2 id={`project-card-${slug}`} className="text-primary [&]:mb-2">
         {title}
@@ -32,12 +36,10 @@ const ProjectCard: React.FunctionComponent<Props> = ({
           })}
         </span>
       </div>
-      <div className="line-clamp-4 text-ellipsis sm:line-clamp-3">
-        {description}
-      </div>
-      <div className="flex space-x-2">
+      <p className="text-ellipsis font-mono">{description}</p>
+      <div className="flex space-x-2 font-mono">
         {tags.map((tag) => (
-          <Badge variant="secondary" key={tag}>
+          <Badge variant="secondary" key={tag} className="truncate">
             {tag}
           </Badge>
         ))}

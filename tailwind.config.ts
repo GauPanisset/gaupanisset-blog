@@ -99,9 +99,21 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            '--tw-prose-body': 'hsl(var(--foreground))',
             '--tw-prose-bullets': 'hsl(var(--border))',
+            '--tw-prose-headings': 'hsl(var(--foreground))',
+            '--tw-prose-links': 'hsl(var(--foreground))',
+            '--tw-prose-bold': 'hsl(var(--foreground))',
+            '--tw-prose-captions': 'hsl(var(--muted-foreground))',
+            '--tw-prose-th-borders': 'hsl(var(--border))',
             '--tw-prose-td-borders': 'hsl(var(--border))',
+            '--tw-prose-invert-body': 'hsl(var(--foreground))',
             '--tw-prose-invert-bullets': 'hsl(var(--border))',
+            '--tw-prose-invert-headings': 'hsl(var(--foreground))',
+            '--tw-prose-invert-links': 'hsl(var(--foreground))',
+            '--tw-prose-invert-bold': 'hsl(var(--foreground))',
+            '--tw-prose-invert-captions': 'hsl(var(--muted-foreground))',
+            '--tw-prose-invert-th-borders': 'hsl(var(--border))',
             '--tw-prose-invert-td-borders': 'hsl(var(--border))',
           },
         },
@@ -116,10 +128,10 @@ module.exports = {
       },
       backgroundImage: {
         'dot-pattern': `url("${svgToDataUri(
-          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(0,17%,8%,0.2)"><path d="M0 .5H31.5V32"/></svg>`
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(0,17%,8%,0.15)"><path d="M0 .5H31.5V32"/></svg>`
         )}")`,
         'dot-pattern-dark': `url("${svgToDataUri(
-          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(33,52%,91%,0.2)"><path d="M0 .5H31.5V32"/></svg>`
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(33,52%,91%,0.15)"><path d="M0 .5H31.5V32"/></svg>`
         )}")`,
       },
     },

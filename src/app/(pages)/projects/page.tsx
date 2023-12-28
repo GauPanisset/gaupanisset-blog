@@ -6,9 +6,9 @@ const ProjectsPage = async () => {
   const projectArticles = await getArticles();
 
   return (
-    <div className="relative">
-      <h1>Projects</h1>
-      <div className="flex w-full flex-col">
+    <div className="relative -left-4 w-[calc(100%+2rem)]">
+      <h1 className="px-4">Projects</h1>
+      <div className="flex w-full flex-col space-y-12">
         {sortArticleByDate(projectArticles).map((projectArticle, index) => (
           <ProjectCard
             key={projectArticle.slug}

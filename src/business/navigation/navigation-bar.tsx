@@ -13,23 +13,29 @@ const NavigationBar: React.FunctionComponent = () => {
   const isWiderThanSmScreen = useMediaQuery('sm');
 
   return (
-    <nav className="not-prose sticky top-0 z-10 box-border flex h-16 items-center justify-between border-b border-border/40 bg-background px-6 sm:px-16">
-      <Button asChild className="h-fit w-fit rounded-full p-0" variant="ghost">
-        <Link href="/">
-          <Image
-            alt="GauPanisset logo"
-            className="h-16 w-16"
-            src="/assets/images/gaupanisset-logo.svg"
-            width={64}
-            height={64}
-          />
-        </Link>
-      </Button>
-      {isWiderThanSmScreen ? (
-        <DesktopNavigationBar />
-      ) : (
-        <MobileNavigationMenu />
-      )}
+    <nav className="sticky top-0 z-10 box-border h-16 w-full border-b border-border/40 bg-background">
+      <div className="not-prose mx-auto flex h-full w-full max-w-7xl items-center justify-between px-6 sm:px-16">
+        <Button
+          asChild
+          className="h-fit w-fit rounded-full p-0"
+          variant="ghost"
+        >
+          <Link href="/">
+            <Image
+              alt="GauPanisset logo"
+              className="h-16 w-16"
+              src="/assets/images/gaupanisset-logo.svg"
+              width={64}
+              height={64}
+            />
+          </Link>
+        </Button>
+        {isWiderThanSmScreen ? (
+          <DesktopNavigationBar />
+        ) : (
+          <MobileNavigationMenu />
+        )}
+      </div>
     </nav>
   );
 };

@@ -64,6 +64,7 @@ const MobileNavigationMenu: React.FunctionComponent = () => {
               className="w-fit text-2xl font-bold delay-150 duration-300 animate-in fade-in slide-in-from-left-8 fill-mode-backwards"
               variant="ghost"
               onClick={preventPropagation}
+              style={{ transitionDelay: '0ms', transitionDuration: '150ms' }}
             >
               <Link href="/projects">Projects</Link>
             </Button>
@@ -72,6 +73,7 @@ const MobileNavigationMenu: React.FunctionComponent = () => {
               className="w-fit text-2xl font-bold delay-200 duration-300 animate-in fade-in slide-in-from-left-8 fill-mode-backwards"
               variant="ghost"
               onClick={preventPropagation}
+              style={{ transitionDelay: '0ms', transitionDuration: '150ms' }}
             >
               <Link href="/about">About</Link>
             </Button>
@@ -80,6 +82,7 @@ const MobileNavigationMenu: React.FunctionComponent = () => {
           <div
             className="self-end delay-150 duration-300 animate-in fade-in slide-in-from-bottom-8 fill-mode-backwards"
             onClick={preventPropagation}
+            style={{ transitionDelay: '0ms', transitionDuration: '150ms' }}
           >
             <ThemeModeSwitch />
           </div>

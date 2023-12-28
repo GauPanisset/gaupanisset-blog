@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 const HomePage = () => {
   return (
-    <div className="flex flex-1 flex-col justify-center space-y-8 overflow-hidden px-6 sm:px-16">
+    <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center space-y-8 overflow-hidden px-6 sm:px-16">
       <div className="absolute inset-0 -top-px z-0 h-screen w-screen bg-dot-pattern dark:bg-dot-pattern-dark">
         <div className="h-full w-full bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)]" />
       </div>
-      <div className="relative">
+      <div className="relative prose-p:font-mono">
         <p className="[&]:m-0">👋 Hi! I&apos;m</p>
-        <h1 className="text-5xl font-black text-primary duration-500 animate-in fade-in fill-mode-backwards xs:text-7xl sm:text-8xl">
+        <h1 className="text-5xl font-black duration-500 animate-in fade-in fill-mode-backwards xs:text-7xl sm:text-8xl [&]:text-primary">
           Gauthier Panisset
         </h1>
         <p className="transition-none delay-300 duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16">
