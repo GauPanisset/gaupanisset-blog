@@ -1,5 +1,7 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
+import { events } from '@/business/bio/events';
+import { Event } from '@/business/bio/ui/event';
 import { Button } from '@/technical/ui/button';
 
 const AboutPage = () => {
@@ -47,44 +49,11 @@ const AboutPage = () => {
         style={{ animationDelay: '400ms' }}
       >
         <h2 id="bio">Bio</h2>
-        <table className="table-auto">
-          <tbody>
-            <tr>
-              <td className="font-bold">1996</td>
-              <td>Born in Mulhouse, France.</td>
-            </tr>
-            <tr>
-              <td className="font-bold">2019</td>
-              <td>
-                Graduate from the engineering school{' '}
-                <a
-                  className="font-bold text-primary"
-                  href="https://mines-nancy.univ-lorraine.fr/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Mines de Nancy
-                </a>{' '}
-                (Computer Science program).
-              </td>
-            </tr>
-            <tr>
-              <td className="font-bold">2019</td>
-              <td>
-                Work as main software engineer at{' '}
-                <a
-                  className="font-bold text-primary"
-                  href="https://goshaba.com/en/goshaba-home-en/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Goshaba
-                </a>
-                .
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="space-y-8">
+          {events.map((event) => (
+            <Event key={event.id} {...event} />
+          ))}
+        </div>
       </section>
       <section
         className="duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16"

@@ -22,7 +22,11 @@ const viewport: Viewport = {
   initialScale: 1,
 };
 
-const inter = Inter({ weight: ['400', '700', '900'], subsets: ['latin'] });
+const inter = Inter({
+  weight: ['400', '500', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
 
 type Props = {
   children: React.ReactNode;
@@ -34,6 +38,7 @@ const RootLayout: React.FunctionComponent<Props> = ({ children }) => {
       <body
         className={cn(
           inter.className,
+          inter.variable,
           'prose flex h-screen w-full max-w-none flex-col dark:prose-invert lg:prose-xl'
         )}
       >

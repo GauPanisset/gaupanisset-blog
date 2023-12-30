@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const svgToDataUri = require('mini-svg-data-uri');
 
 /** @type {import('tailwindcss').Config} */
@@ -133,6 +134,9 @@ module.exports = {
         'dot-pattern-dark': `url("${svgToDataUri(
           `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16px" height="16px" fill="none" stroke="hsla(33,52%,91%,0.15)"><path d="M0 .5H31.5V32"/></svg>`
         )}")`,
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
