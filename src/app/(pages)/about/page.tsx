@@ -11,8 +11,8 @@ const AboutPage = () => {
         style={{ animationDelay: '300ms' }}
       >
         <p>
-          I&apos;m Gauthier Panisset a software engineer based in Paris and
-          currently working for{` `}
+          I&apos;m Gauthier Panisset a software engineer based in Paris, shaping
+          things up at{` `}
           <a
             className="font-bold text-primary"
             href="https://goshaba.com/en/goshaba-home-en/"
@@ -24,21 +24,22 @@ const AboutPage = () => {
           .
         </p>
         <p>
-          I like running, sailing, and hiking. Nature is for me the most
-          beautiful gym.
+          Beyond coding, I enjoy running, sailing, and hiking, considering
+          nature as the most beautiful gym.
           <br />
-          I used to play the cello, but now I neither have the time nor the
-          place to practice. However, I still really enjoy the music.
+          While I used to play the cello, finding time and space for practice
+          has become a challenge. Nevertheless, my love for music remains.
           <br />
-          I&apos;m also crazy about video games. I like to try new ones,
-          discover others on Twitch or Youtube, and sometimes build some.
+          I&apos;m also a bit of a video game enthusiast. Whether trying out new
+          releases, exploring them on Twitch or Youtube, or even dabbling in
+          building some myself, it&apos;s a hobby I cherish.
         </p>
         <p>
-          But what I really love is to imagine, design and build digital
-          products or services. I spend a lot of time reading articles about
-          product management or product strategy and obviously about all kind of
-          technology that can be use to create something. And I spend even more
-          time working on side projects.
+          But what I really love is to imagine, design and bringing digital
+          products or services to life. I dedicate a significant chunk of my
+          time to reading articles on product management, product strategy and,
+          all kind of technology that can be use for creation. And, of course,
+          there&apos;s always time for messing around with side projects.
         </p>
       </section>
       <section

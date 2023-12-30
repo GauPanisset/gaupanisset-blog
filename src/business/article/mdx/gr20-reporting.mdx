@@ -9,19 +9,50 @@ date:
 tags:
   - 'Algorithms'
   - 'SVG'
+gpt-prompt:
+  - I built a little technical demo but it's still far from the initial idea
+  - I also publish on daily basis my journey on Strava, but I wanted something
+    more fun
+  - I wanted to create a narrative game with an accent on people we met during
+    the adventure and what we shared with them
+  - As I wanted to display the real path (from .pgx files) I learn some powerful
+    algorithms (Douglas-Peucker & Catmull-Rom) to simplify (motivated by
+    performance issues) or enhance (motivated by visual design) the path.
 ---
 
 import { MdxImage } from '@/technical/ui/mdx-image';
 
 ## Why?
 
-Work in progress...
+Took on the epic GR20 hike in Corsica, and the adventure didn't stop at the
+trails. I'm in the midst of turning this 14-day journey into a web app, though
+it's more of a tech demo for now, far from the grand vision I have in mind.
+
+Sure, I've been posting my daily exploits on Strava, but I felt the need for
+something more engaging. That's when the idea of a narrative game popped up.
+It's not just about documenting the paths; it's about the people we crossed
+paths with, the stories we shared, and the bonds formed amidst the Corsican
+landscapes.
+
+Digging into the technical side, I grappled with the challenge of displaying the
+real path from .gpx files. That led me down the rabbit hole of powerful
+algorithms like Douglas-Peucker and Catmull-Rom. Why? Well, for one, performance
+issues nudged me towards simplifying the path. On the flip side, the visual
+aesthetic called for enhancements.
 
 ## Screenshots
 
-<MdxImage alt="" caption="" src="my-gr20/gr20-map.jpg" />
+<MdxImage
+  alt="full game screen with the GR20 path and refuges displayed as little tente icon"
+  caption="Main game screen. The player scroll to explore the path, encountering refuges and points of interest along the way."
+  src="my-gr20/gr20-map.jpg"
+/>
 
-<MdxImage alt="" caption="" src="my-gr20/gr20-note-image.jpg" />
+<MdxImage
+  alt="point of interest screen with a dialog displaying a photo of mountain and a text"
+  caption="Point of interest screen. As the main character (that's me!) on this journey, I share photos and thoughts with the player."
+  src="my-gr20/gr20-note-image.jpg"
+/>
 
 ## Technical stack
 

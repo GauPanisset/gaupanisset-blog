@@ -1,9 +1,9 @@
 ---
 title: Slack wheel
 description:
-  At the office when the time comes to go to lunch we always have the same
-  question "Where do we eat?". To make a choice I built a spinning wheel
-  displaying a random answer on Slack.
+  At the office, lunchtime decisions got a facelift. Tired of the 'Where do we
+  eat?' dilemma, I whipped up a spinning wheel. Now, with just a spin on Slack,
+  lunch destiny is decided. No more lunchtime debates.
 date:
   creation: '2022-11-05'
   update: '2022-11-20'
@@ -11,13 +11,41 @@ tags:
   - 'Gif'
   - 'Serverless'
   - 'Slack'
+gpt-prompt:
+  - The idea of displaying a random wheel on Slack sound crazy because we can
+    easily imagine more simple solution (for example just pick a random element
+    on a list)
+  - The idea comes from a discussion with none-tech guy. I wanted show that "we
+    can do everthing, but it always comes with a cost".
+  - I created a spinning wheel on a canvas, then animated it and generate a
+    .gif. The .gif was stored on a S3 (add a short description of AWS S3) which
+    made me practice the streams.
+  - I add the blocks to communicate with Slack (btw they did a really good job
+    about integration it was really fluid)
+  - I deployed it with Serverless which is a framework I really love because it
+    helps me to bring to life project really quickly.
 ---
 
 import { MdxImage } from '@/technical/ui/mdx-image';
 
 ## Why?
 
-Work in progress...
+Imagine this at the office: the eternal lunch debate—'Where do we eat?' I
+decided to inject a bit of crazy into the mix. Instead of a straightforward
+solution like picking a random element from a list, I went all-in and built a
+spinning wheel that dishes out a random answer right there on Slack. Why? Well,
+because simplicity is overrated, and I wanted to prove a point.
+
+This idea started with a chat with a non-tech buddy. I wanted to demonstrate
+that while we can do anything (even if there's always a cost). So, I got to
+work. Created a wheel on a canvas, spinned it with animations, and transformed
+it into a .gif, stored it on a AWS S3 (a storage solution) and plug the Slack
+API for communication. I must say, Slack did an impressive job with integrations
+— smooth sailing all the way.
+
+The final touch? Deployment with Serverless, a framework I swear by. It's one of
+my go-to when I want to bring projects to life in a flash. Lunch decisions are
+now a spin away, thanks to a bit of craziness and a whole lot of tech magic!"
 
 ## Screenshots
 
@@ -32,7 +60,7 @@ Work in progress...
 - [Serverless](https://www.serverless.com/framework/docs/getting-started) with
   [TypeScript](https://www.typescriptlang.org/docs/) to ease deployment.
 - [gif-encoder](https://www.npmjs.com/package/gif-encoder) and
-  [node-canvas](https://github.com/Automattic/node-canvas) to create `.gif`.
+  [node-canvas](https://github.com/Automattic/node-canvas) to create a .gif.
 - [Slack API](https://api.slack.com) to communicate with Slack.
 
 ## Source

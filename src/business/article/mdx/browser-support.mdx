@@ -1,9 +1,10 @@
 ---
 title: Browser Support
 description:
-  Browser support is often forgotten when a developper implements a design, even
-  if it is important for user experience. So, I tried to create a Chrome
-  Extension showing browser support of the running website.
+  Browser support is often neglected when a developper implements a design, even
+  if key player in delivering a seamless user experience. Recognizing this gap,
+  I crafted a Chrome Extension dedicated to unveiling the browser support
+  details of the website currently in view.
 date:
   creation: '2022-11-21'
   update: '2022-12-24'
@@ -11,13 +12,38 @@ tags:
   - 'Chrome Extension'
   - 'React'
   - 'Tailwind'
+gpt-prompt:
+  - when building a product you never know precisely with what browsers your are
+    compatible. But one day, your customer/user ask a minimal browser version.
+    So you answer "Mmh yeah, let's say it's the version of two of years ago".
+  - I wanted to be able to precisely know, so I build some code to extract all
+    the properties used in a web page and retrieve the minimal browser version
+    to be able to use them.
+  - Quite challenging since we are far from the web styled by only inline styles
+    or some css files. We have now css in js injecting the style somewhere in
+    the page, css variables, etc...
+  - The extension is still a bit buggy but it's a fun POC
 ---
 
 import { MdxImage } from '@/technical/ui/mdx-image';
 
 ## Why?
 
-Work in progress...
+In the world of making stuff for the web, knowing exactly which browsers will
+play nice can be a real head-scratcher. Picture this: a customer asks for a
+specific browser version, and you're like, 'Mmmh yeaah, let's go with something
+from two years ago, maybe?'
+
+Frustrated by this guessing game, I cooked up some code magic. It dives into the
+nitty-gritty of a web page, sniffs out all the technical bits, and figures out
+the minimum browser version needed.
+
+Sounds easy, right? Nope. Web styling has come a long way from simple
+stylesheets. Now, we've got CSS doing acrobatics in JavaScript, playing with
+variables, and whatnot.
+
+And voila! The result is this Chrome Extension of mine. Sure, it's a bit finicky
+right now, but it was a fun experiment.
 
 ## Screenshots
 
