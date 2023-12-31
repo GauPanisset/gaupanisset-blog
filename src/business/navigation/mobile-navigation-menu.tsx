@@ -75,6 +75,19 @@ const MobileNavigationMenu: React.FunctionComponent = () => {
               onClick={preventPropagation}
               style={{ transitionDelay: '0ms', transitionDuration: '150ms' }}
             >
+              <Link href="/uses">Uses</Link>
+            </Button>
+            <Button
+              asChild
+              className="w-fit text-2xl font-bold duration-300 animate-in fade-in slide-in-from-left-8 fill-mode-backwards"
+              variant="ghost"
+              onClick={preventPropagation}
+              style={{
+                transitionDelay: '0ms',
+                transitionDuration: '150ms',
+                animationDelay: '250ms',
+              }}
+            >
               <Link href="/about">About</Link>
             </Button>
           </div>

@@ -13,6 +13,9 @@ const DesktopNavigationBar: React.FunctionComponent = () => {
         <Link href="/projects">Projects</Link>
       </Button>
       <Button asChild className="text-2xl font-bold" variant="ghost">
+        <Link href="/uses">Uses</Link>
+      </Button>
+      <Button asChild className="text-2xl font-bold" variant="ghost">
         <Link href="/about">About</Link>
       </Button>
     </div>

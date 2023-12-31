@@ -1,8 +1,9 @@
+import { withIds } from '@/technical/helpers/with-ids';
+
 import { Event } from './types';
 
-const events: Event[] = [
+const events: Event[] = withIds([
   {
-    id: 1,
     date: '1996',
     title: 'Born in Mulhouse, France',
     subtitle: '',
@@ -10,7 +11,6 @@ const events: Event[] = [
     tags: [],
   },
   {
-    id: 2,
     date: '2016 - 2019',
     title: (
       <>
@@ -30,7 +30,6 @@ const events: Event[] = [
     tags: [],
   },
   {
-    id: 3,
     date: '2019 - 2020',
     title: (
       <a
@@ -48,7 +47,6 @@ const events: Event[] = [
     tags: ['hobby'],
   },
   {
-    id: 4,
     date: '2019 - Now',
     title: (
       <a
@@ -65,6 +63,6 @@ const events: Event[] = [
       'Designed, developed, deployed and maintained the new version of Goshaba product.',
     tags: [],
   },
-];
+]);
 
 export { events };
