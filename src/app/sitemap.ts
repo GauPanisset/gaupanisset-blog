@@ -17,8 +17,13 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
       priority: 0.8,
     },
     {
+      url: 'https://gauthier.panisset.fr/uses',
+      lastModified: new Date('2023-12-31T15:04'),
+      priority: 0.5,
+    },
+    {
       url: 'https://gauthier.panisset.fr/about',
-      lastModified: new Date('2023-12-28T16:24'),
+      lastModified: new Date('2023-12-30T22:33'),
       priority: 0.5,
     },
     ...articles.map((article) => ({

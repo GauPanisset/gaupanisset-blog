@@ -1,0 +1,43 @@
+---
+title: Gitlab dashboard
+description:
+  A efficient developers team must ship fast. But here the problem, our Gitlab
+  Merge Requests was often forgotten (late review, approval or deployment). So
+  we decided to monitor their lifetimes.
+date:
+  creation: '2023-06-25'
+  update: '2023-09-08'
+tags:
+  - 'NextJS'
+  - 'shadcn'
+  - 'Dataviz'
+  - 'Prisma'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+## Screenshots
+
+<MdxImage
+  alt="a dashboard page with 2 graphs at the bottom showing the mean duration of a MR and the number of MR by week. At the top left, 3 cards display this metrics for the current with the evolution compare to the previous one."
+  caption="The overview page with the key metrics and graph to follow our objectif on MR duration."
+  src="gitlab-dashboard/gitlab-dashboard-overview.png"
+/>
+<MdxImage
+  alt="a list of MR duration represented as horizontal bar. Each is composed of 3 sections representing the duration between each of the specific events."
+  caption="The details page showing all the MRs with some specific events of an MR lifetime."
+  src="gitlab-dashboard/gitlab-dashboard-details.png"
+/>
+
+## Technical stack
+
+- [NextJS](https://nextjs.org/) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework.
+- [Tailwind](https://tailwindcss.com/docs) for styling.
+- [Shadcn](https://ui.shadcn.com/) for UI components.
+- [Rechart](https://recharts.org/en-US/) for charts components.
+- [Luxon](https://moment.github.io/luxon/#/) for Date helpers.
+- [Gitlab API](https://docs.gitlab.com/ee/api/graphql/index.html) for Gitlab
+  integration.
+- [Prisma](https://www.prisma.io/docs) with SQLite for data persistence and
+  optimization.

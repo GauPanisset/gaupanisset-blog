@@ -1,0 +1,48 @@
+---
+title: Time tracker dashboard
+description:
+  I've always been curious to see how I spend my work hours. So, I cooked up a
+  Notion page with a calendar to track every moment. This project
+  time-visualization dashboard, giving me a snapshot of the hours that vanish
+  into the work abyss.
+date:
+  creation: '2023-01-15'
+  update: '2023-03-20'
+tags:
+  - 'NextJS'
+  - 'Tailwind'
+  - 'Notion'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+## Screenshots
+
+<MdxImage
+  alt="a dashboard displaying a sprint number select, a 'hours spent' pannel with the number of hours spent on each activity and on each project. Below the differents tasks are represented by little rectangle and sorted by day."
+  caption="The visualization of the sprint n°25. At the top, the summary of the hours spent and at the bottom the detailed tasks."
+  src="time-tracker-dashboard/time-tracker-dashboard.png"
+/>
+
+<MdxImage
+  alt="animation in which the tasks are reordered by activity, then by project and finaly by day."
+  caption="Animation of the sorting feature (by day, by activity or by project)."
+  src="time-tracker-dashboard/time-tracker-dashboard-sort-by.gif"
+/>
+
+<MdxImage
+  alt="animation in which the tasks are highlighted depending on the project selected."
+  caption="Animation of the highlighting feature (by project)."
+  src="time-tracker-dashboard/time-tracker-dashboard-highlight-project.gif"
+/>
+
+## Technical stack
+
+- [NextJS](https://nextjs.org/) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework.
+- [Tailwind](https://tailwindcss.com/docs) for styling.
+- [Notion API](https://developers.notion.com/) for Notion integration.
+
+## Source code
+
+[https://github.com/GauPanisset/time-tracker-dashboard](https://github.com/GauPanisset/time-tracker-dashboard)
