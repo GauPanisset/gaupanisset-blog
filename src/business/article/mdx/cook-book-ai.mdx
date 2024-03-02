@@ -1,0 +1,36 @@
+---
+title: Cook book AI
+description:
+  Nowadays AI is everywhere! To try those famous LLM, I've built a simple app
+  extracting the cooking recipe from any website based on the url.
+date:
+  creation: '2023-09-10'
+  update: '2023-09-23'
+tags:
+  - 'NextJS'
+  - 'OpenAI'
+  - 'Helicone'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+## Screenshots
+
+<MdxImage
+  alt={`a text input with the url of the "Salade de quinoa à la feta" on "marmiton.org" and the ingredients and instructions in a card below.`}
+  caption={`The recipe of "Salade de quinoa à la feta" extracted from "marmiton.org".`}
+  src="cook-book-ai/cook-book-ai.png"
+/>
+
+## Technical stack
+
+- [NextJS](https://nextjs.org/) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework.
+- [Tailwind](https://tailwindcss.com/docs) for styling.
+- [Shadcn](https://ui.shadcn.com/) for UI components.
+- [OpenAI API](https://openai.com/product) for the GPT-3.5 LLModel with
+  [Helicone](https://www.helicone.ai) for monitoring and caching.
+
+## Source code
+
+[https://github.com/GauPanisset/cook-book-ai](https://github.com/GauPanisset/cook-book-ai)
