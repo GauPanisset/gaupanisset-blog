@@ -13,6 +13,7 @@ const ProjectCard: React.FunctionComponent<Props> = ({
   slug,
   tags,
   title,
+  liveUrl,
 }) => {
   return (
     <Link
@@ -24,8 +25,14 @@ const ProjectCard: React.FunctionComponent<Props> = ({
         transitionDuration: '250ms',
       }}
     >
-      <h2 id={`project-card-${slug}`} className="text-primary [&]:mb-2">
+      <h2
+        id={`project-card-${slug}`}
+        className="flex items-center text-primary [&]:mb-2"
+      >
         {title}
+        {liveUrl ? (
+          <span className="ml-4 block h-2 w-2 rounded-full bg-green-500 motion-safe:animate-pulse" />
+        ) : null}
       </h2>
       <div className="text-muted-foreground">
         <span>

@@ -26,6 +26,7 @@ const metadataSchema = z.object({
   description: z.string(),
   tags: z.array(z.string()),
   title: z.string(),
+  liveUrl: z.string().url().optional(),
 });
 
 type Metadata = z.infer<typeof metadataSchema>;
