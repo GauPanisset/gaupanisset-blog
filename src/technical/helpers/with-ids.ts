@@ -1,4 +1,7 @@
-const withIds = <T>(list: T[]) =>
-  list.map((element, index) => ({ id: index, ...element }));
+const withIds = <T>(list: T[], prefix?: string) =>
+  list.map((element, index) => ({
+    id: prefix ? `${prefix}-${index}` : String(index),
+    ...element,
+  }));
 
 export { withIds };

@@ -7,10 +7,9 @@ const UseCategories = {
 type UseCategory = (typeof UseCategories)[keyof typeof UseCategories];
 
 type Use = {
-  id: number;
+  id: string;
   title: string;
   description: string;
-  category: UseCategory;
   link?: string;
   tags?: string[];
 };

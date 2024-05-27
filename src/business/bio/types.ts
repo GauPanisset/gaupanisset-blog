@@ -1,5 +1,5 @@
 type Event = {
-  id: number;
+  id: string;
   date: string;
   title: React.ReactNode;
   subtitle: React.ReactNode;
