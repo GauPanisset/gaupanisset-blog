@@ -6,7 +6,7 @@ const robots = (): MetadataRoute.Robots => {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'http://gauthier.panisset.fr/sitemap.xml',
+    sitemap: 'https://gauthier.panisset.fr/sitemap.xml',
   };
 };
 
