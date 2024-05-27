@@ -1,0 +1,65 @@
+---
+title: Better Jow
+description:
+  Jow is a fantastic app that helps me plan my weekly groceries. However, after
+  a few months, I noticed their suggestion system could use some improvement.
+  So, I wrote my own suggestion algorithm and injected it into the web app using
+  a browser extension!
+date:
+  creation: '2024-05-13'
+  update: '2024-05-23'
+tags:
+  - 'Browser extension'
+  - 'WXT'
+  - 'shadcn'
+  - 'Tailwind'
+---
+
+import { MdxImage } from '@/technical/ui/mdx-image';
+
+I absolutely love using Jow because it saves me so much time! I often find
+myself clueless about what to eat or what to pick up at the grocery store. I've
+been a fan since they launched, but lately, I've noticed it takes longer to get
+a good set of meal suggestions. Their algorithm doesn’t seem as powerful as it
+used to be.
+
+On the bright side, I’m a huge fan of browser extensions — they're great for
+adding missing features or tweaking the web experience. Developing these
+extensions can be tricky, though, because you need to understand the web app
+inside out. So, I spent some time reverse-engineering Jow. By the way, LLMs are
+fantastic assistants for this, especially when you're deciphering minified
+source code. Everything becomes so much clearer with their help!
+
+I decided to create my own suggestion algorithm using Jow's as a base but with
+some added steps. I wanted to avoid suggesting recipes I’ve already chosen in
+the past 30 days and limit the number of long recipes since I need some quick
+meals during the week. Plus, I aimed for a good variety of recipes. By keeping
+Jow's algorithm, I didn't have to worry about managing recipe storage and
+updates. And I could still use all their features like user preferences and
+tools, ensuring that the recipes suggested are ones I can actually eat and make.
+
+Finally, I replaced the submit button with my own, complete with an awesome
+shiny effect, to maintain the same user experience.
+
+I might add more rules in the future, like considering recipe calories or
+reducing food waste.
+
+## Screenshots
+
+<MdxImage
+  alt="The menu creation page with a number of meals input and a shinny submit button. The extension popup on the bottom left corner with the extension settings."
+  caption="The menu creation page with the extension popup."
+  src="better-jow/better-jow.gif"
+/>
+
+## Technical stack
+
+- [WXT](https://wxt.dev/) with
+  [TypeScript](https://www.typescriptlang.org/docs/) as development framework
+  for Browser extension.
+- [Tailwind](https://tailwindcss.com/docs) for styling.
+- [Shadcn](https://ui.shadcn.com/) for UI components.
+
+## Source code
+
+[https://github.com/GauPanisset/better-jow](https://github.com/GauPanisset/better-jow)
