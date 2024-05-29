@@ -2,11 +2,11 @@ import './globals.css';
 
 import { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import Script from 'next/script';
 
 import { NavigationBar } from '@/business/navigation/navigation-bar';
 import { ThemeProvider } from '@/business/theme/theme-provider';
-import { cn } from '@/technical/ui/helpers';
+import { AnalyticsScript } from '@/technical/analytics/analytics-script';
+import { SpeedInsightsScript } from '@/technical/analytics/speed-insights-script';
 
 const metadata: Metadata = {
   description:
@@ -39,11 +39,9 @@ const RootLayout: React.FunctionComponent<Props> = ({ children }) => {
             {children}
           </main>
         </ThemeProvider>
+        <SpeedInsightsScript />
       </body>
-      <Script
-        src="https://statsy.observer/cl9lgmptj0009ld0bmgxz683f.js"
-        defer={true}
-      />
+      <AnalyticsScript />
     </html>
   );
 };
