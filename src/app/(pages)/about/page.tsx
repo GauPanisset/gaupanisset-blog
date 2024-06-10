@@ -17,11 +17,11 @@ const AboutPage = () => {
           things up at{` `}
           <a
             className="font-bold text-primary"
-            href="https://goshaba.com/en/goshaba-home-en/"
+            href="https://www.elaxenergie.com/"
             rel="noreferrer"
             target="_blank"
           >
-            Goshaba
+            Elax Energie
           </a>
           .
         </p>

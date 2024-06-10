@@ -47,7 +47,7 @@ const events: Event[] = withIds([
     tags: ['hobby'],
   },
   {
-    date: '2019 - Now',
+    date: '2019 - 2024',
     title: (
       <a
         className="text-primary underline"
@@ -58,9 +58,26 @@ const events: Event[] = withIds([
         Goshaba
       </a>
     ),
-    subtitle: 'Intern → Lead Full Stack Developer',
+    subtitle: 'Intern → Lead Fullstack Developer',
     description:
-      'Designed, developed, deployed and maintained the new version of Goshaba product.',
+      'Designed, developed, deployed and maintained assessment tools based on cognitive science and video games.',
+    tags: [],
+  },
+  {
+    date: '2024 - Present',
+    title: (
+      <a
+        className="text-primary underline"
+        href="https://www.elaxenergie.com/"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Elax Energie
+      </a>
+    ),
+    subtitle: 'Senior Fullstack Software Engineer',
+    description:
+      'Designed, developed, deployed applications optimizing energy use in water heaters, real-time monitoring systems and user-friendly interfaces for landlords and tenants.',
     tags: [],
   },
 ]);

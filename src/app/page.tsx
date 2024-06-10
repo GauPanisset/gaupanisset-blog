@@ -17,13 +17,13 @@ const HomePage = () => {
           Currently Software Engineer at{' '}
           <a
             className="font-bold text-primary"
-            href="https://goshaba.com/en/goshaba-home-en/"
+            href="https://www.elaxenergie.com/"
             rel="noreferrer"
             target="_blank"
           >
-            Goshaba
+            Elax Energie
           </a>{' '}
-          building an assessment tool with cognitive science and video game.
+          building applications to optimize, monitor and manage water heaters.
         </p>
         <p className="my-8 transition-none delay-500 duration-500 animate-in fade-in fill-mode-backwards motion-safe:slide-in-from-bottom-16 sm:my-16">
           Welcome to my website, have a look at my{' '}
